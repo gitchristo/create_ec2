@@ -1,13 +1,15 @@
 ---
 
-- hosts: 127.0.0.1
+- hosts: localhost
 
   tasks:
     - ec2:
+       key_name: ec2ChrisKey
        instance_type: t2.micro
-       image: ami-6f68cf0f
+       image: ami-f173cc91
        wait: yes
        vpc_subnet_id: subnet-a13239c5
        assign_public_ip: yes
+       region: us-west-2
        instance_tags:
-	Name: ansibleec2
+         Name: ansibleec2
