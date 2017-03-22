@@ -1,0 +1,9 @@
+---
+
+- ec2:
+    instance_type: t2.micro
+    image: ami-6f68cf0f
+    wait: yes
+    vpc_subnet_id: subnet-a13239c5
+    assign_public_ip: yes
+
