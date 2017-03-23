@@ -1,11 +1,18 @@
+#!/bin/bash
 ---
 
 - hosts: localhost
+  vars_files:
+    - vars.yml
 
+#- name: Include varid.yml
+#  include_vars:
+#    file: varid.yml
+#    name: instanceid
   tasks:
     - ec2:
        state: 'absent'
        region: us-west-2
-       instance_id: i-0c474e6b425bbcb54
+       instance_id: '{{ instance_id }}'
        instance_tags:
          Name: ansibleec2
